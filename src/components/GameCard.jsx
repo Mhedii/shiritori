@@ -54,6 +54,16 @@ const GameCard = () => {
 
     return () => clearInterval(timerInterval);
   }, [activePlayer]);
+  //   useEffect(() => {
+  //     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${activePlayer===}`)
+  //       .then((res) => {
+  //         console.log(res);
+  //         // return res.json();
+  //       })
+  //       .then((data) => {
+  //         console.log(data);
+  //       });
+  //   }, [activePlayer]);
   return (
     <div className="grid grid-cols-12 gap-4 mt-[2rem]">
       {/* Left Side */}
@@ -67,7 +77,7 @@ const GameCard = () => {
       >
         <div className="flex justify-between px-2">
           <div>
-            <p>Guest 1</p>
+            <p className="text-lg font-medium">Guest 1</p>
             <p>Score: {p1score}</p>
           </div>
           <p>{activePlayer === "player1" ? timeRemaining : null}</p>
@@ -108,7 +118,7 @@ const GameCard = () => {
       >
         <div className="flex justify-between px-2">
           <div>
-            <p>Guest 2</p>
+            <p className="text-lg font-medium">Guest 2</p>
             <p>Score: {p2score}</p>
           </div>
           <p>{activePlayer === "player2" ? timeRemaining : null}</p>
